@@ -8,3 +8,11 @@
 	// All modern browsers
 	border-radius: @radius;
 }
+
+
+// Help with background bleed when used with border-radius
+.clip-radius() {
+	-webkit-background-clip: padding-box;
+	-moz-background-clip: padding;
+	background-clip: padding-box;
+}

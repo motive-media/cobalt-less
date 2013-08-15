@@ -7,34 +7,34 @@
 ### Animate
 
 #### Transition
-```less
+```css
 .transition(@transition);
 ```
 
 ### Border Radius
 
 #### Border Radius
-```less
+```css
 .border-radius(@radius);
 ```
 
 #### Background Clip
-```less
+```css
 .clip-radius();
 ```
 
 ### Gradients
 
 #### Gradient
-```less
+```css
 .gradient(@bg: #efefef, @start: #ffffff, @stop: #eeeeee);
 ```
 
 #### Linear Gradient
-```less
+```css
 .linear-gradient(@start: #ffffff, @stop: #eeeeee);
 ```
 #### Transparent Background Color
-```less
+```css
 .transparent-background-color(@color);
 ```

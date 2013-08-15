@@ -4,14 +4,14 @@
 
 # Documentation
 
-## Animate
+## Animate.less
 
 ### Transition
 ```css
 .transition(@transition);
 ```
 
-## Border Radius
+## Border_Radius.less
 
 ### Border Radius
 ```css
@@ -23,7 +23,7 @@
 .clip-radius();
 ```
 
-## Gradients
+## Gradient.less
 
 ### Gradient
 ```css

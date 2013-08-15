@@ -23,8 +23,15 @@
 
 
 .linear-gradient(@start: #ffffff, @stop: #eeeeee) {
+  @argb_start: argb(@start);
+  @argb_stop: argb(@stop);
+
+  @red: red(@start);
+  @green: green(@start);
+  @blue: blue(@start);
+
   // Browsers that do not support gradients (I know right?!)
-  background: rgb(red(@start),green(@start),blue(@start));
+  background: rgb(@red,@green,@blue);
 
   // Firefox 3.6+
   background: -moz-linear-gradient(top,  @start 0%, @stop 100%);
@@ -42,15 +49,14 @@
   background: linear-gradient(to bottom,  @start 0%,@stop 100%); /* W3C */
 
   // IE6 to IE 8
-  @argb_start: argb(@start);
-  @argb_stop: argb(@stop);
   filter: ~"progid:DXImageTransform.Microsoft.gradient(startColorstr='@{argb_start}', endColorstr='@{argb_stop}',GradientType=0 )";
 }
 
 
 // Alpha transparent background for IE without images
-.translucent-background-color(@color) {
+.transparent-background-color(@color) {
   @argb: argb(@color);
+
   background: @color;
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@{argb}', endColorstr='@{argb}',GradientType=0 ); /* IE6-9 */
 }

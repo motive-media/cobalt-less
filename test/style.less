@@ -1,0 +1,25 @@
+// Import Cobalt Less project file
+@import "../cobalt_less.less";
+
+@bg: rgb(240, 240, 240);
+@bg_hover: darken(@bg, 20%);
+
+@border: rgb(220, 220, 220);
+@border_hover: darken(@border, 20%);
+
+#main {
+  width: 900px;
+  margin: 0 auto;
+
+  article {
+    .transition(background-color 0.5s ease, border-width 0.5s ease-in-out;);
+
+    border: 1px solid @border;
+    background-color: @bg;
+
+    &:hover {
+      border: 10px solid @border_hover;
+      background-color: @bg_hover;
+    }
+  }
+}

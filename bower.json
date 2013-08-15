@@ -1,8 +1,10 @@
 {
   "name": "cobalt-less",
-  "version": "0.1",
-  "main": "",
-  "ignore": [],
+  "version": "0.2",
+  "main": "cobalt_less.less",
+  "ignore": [
+    "test"
+  ],
   "dependencies": {
 
   },

@@ -4,13 +4,14 @@
 
 # Include in your project
 Locate the vendor folder ```cobalt-less``` where ever you set your bower path to.
+
 Inside your projects less file ```@import``` the ```cobalt_less.less``` file and that is it.
 
 ### Example
 ```css
 @import "../vendor/cobalt-less/cobalt_less.less";
 
-// start your less here
+/* start your less here */
 ```
 
 # Documentation

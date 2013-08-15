@@ -1,40 +1,40 @@
-## Install via Bower
+# Install via Bower
 
     bower install cobalt-less
 
-## Documentation
+# Documentation
 
-### Animate
+## Animate
 
-#### Transition
+### Transition
 ```css
 .transition(@transition);
 ```
 
-### Border Radius
+## Border Radius
 
-#### Border Radius
+### Border Radius
 ```css
 .border-radius(@radius);
 ```
 
-#### Background Clip
+### Background Clip
 ```css
 .clip-radius();
 ```
 
-### Gradients
+## Gradients
 
-#### Gradient
+### Gradient
 ```css
 .gradient(@bg: #efefef, @start: #ffffff, @stop: #eeeeee);
 ```
 
-#### Linear Gradient
+### Linear Gradient
 ```css
 .linear-gradient(@start: #ffffff, @stop: #eeeeee);
 ```
-#### Transparent Background Color
+### Transparent Background Color
 ```css
 .transparent-background-color(@color);
 ```

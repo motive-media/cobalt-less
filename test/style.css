@@ -15,3 +15,19 @@
   border: 10px solid #a9a9a9;
   background-color: #bdbdbd;
 }
+#main article .content {
+  background: #dddddd;
+  background: transparent;
+  background: -moz-linear-gradient(top, #dddddd 0%, rgba(255, 255, 255, 0.2) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #dddddd), color-stop(100%, rgba(255, 255, 255, 0.2)));
+  /* Chrome,Safari4+ */
+
+  background: -webkit-linear-gradient(top, #dddddd 0%, rgba(255, 255, 255, 0.2) 100%);
+  background: -ms-linear-gradient(top, #dddddd 0%, rgba(255, 255, 255, 0.2) 100%);
+  /* IE10+ */
+
+  background: linear-gradient(to bottom, #dddddd 0%, rgba(255, 255, 255, 0.2) 100%);
+  /* W3C */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffdddddd', endColorstr='#33ffffff',GradientType=0 );
+}

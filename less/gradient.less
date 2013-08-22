@@ -21,17 +21,23 @@
 	filter: ~"progid:DXImageTransform.Microsoft.gradient(startColorstr='@{start}', endColorstr='@{stop}',GradientType=0 )";
 }
 
-
-.linear-gradient(@start: #ffffff, @stop: #eeeeee) {
-  @argb_start: argb(@start);
-  @argb_stop: argb(@stop);
-
+.linear-gradient(@start: #fff, @stop: #eee) {
   @red: red(@start);
   @green: green(@start);
   @blue: blue(@start);
 
   // Browsers that do not support gradients (I know right?!)
   background: rgb(@red,@green,@blue);
+}
+
+.linear-gradient(@start: #fff, @stop: #eee) when (alpha(@start) < 1), (alpha(@stop) < 1) {
+  background: transparent;
+}
+
+.linear-gradient(@start: #fff, @stop: #eee) {
+  @argb_start: argb(@start);
+  @argb_stop: argb(@stop);
+
 
   // Firefox 3.6+
   background: -moz-linear-gradient(top,  @start 0%, @stop 100%);
@@ -51,6 +57,8 @@
   // IE6 to IE 8
   filter: ~"progid:DXImageTransform.Microsoft.gradient(startColorstr='@{argb_start}', endColorstr='@{argb_stop}',GradientType=0 )";
 }
+
+
 
 
 // Alpha transparent background for IE without images

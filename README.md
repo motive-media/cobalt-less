@@ -22,6 +22,9 @@ Inside your projects less file ```@import``` the ```cobalt.less``` file and that
 ```css
 .transition(@transition);
 ```
+Adds all known browser prefixes to transition property.
+
+For multiple transition definitions use ```.transition(~'transition1, transition2');```
 
 ## Border_Radius.less
 
@@ -44,9 +47,12 @@ Inside your projects less file ```@import``` the ```cobalt.less``` file and that
 
 ### Linear Gradient
 ```css
-.linear-gradient(@start: #ffffff, @stop: #eeeeee);
+.linear-gradient(@start: #fff, @stop: #eee);
 ```
+Creates a vertical linear gradient from @start (top) to @stop (bottom). [Supports transparency]
+
 ### Transparent Background Color
 ```css
 .transparent-background-color(@color);
 ```
+Sets the background to a color with an alpha channel. This mixin does not support the use of a simultaneous background-image in IE.

@@ -59,12 +59,14 @@
 }
 
 
-
-
 // Alpha transparent background for IE without images
 .transparent-background-color(@color) {
   @argb: argb(@color);
 
-  background: @color;
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@{argb}', endColorstr='@{argb}',GradientType=0 ); /* IE6-9 */
+  background: transparent;
+  .rgba & {
+    background: @color;
+  }
+
+  filter: ~"progid:DXImageTransform.Microsoft.gradient(startColorstr='@{argb}', endColorstr='@{argb}',GradientType=0 )"; /* IE6-9 */
 }

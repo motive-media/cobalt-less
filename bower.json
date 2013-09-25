@@ -3,7 +3,6 @@
   "version": "0.3.3",
   "main": "cobalt.less",
   "ignore": [
-    "test"
   ],
   "dependencies": {
 

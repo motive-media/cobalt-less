@@ -1,26 +1,3 @@
-.gradient(@bg: #efefef, @start: #ffffff, @stop: #eeeeee) {
-  // Browsers that do not support gradients (I know right?!)
-  background: @bg;
-
-  // Firefox 3.6+
-  background: -moz-linear-gradient(top,  @start 0%, @stop 100%);
-
-  // Chrome & Safari 4+
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@start), color-stop(100%,@stop)); /* Chrome,Safari4+ */
-
-  // Chrome 10 + & Safari 5.1+
-  background: -webkit-linear-gradient(top,  @start 0%,@stop 100%);
-
-  // IE 10+
-  background: -ms-linear-gradient(top,  @start 0%,@stop 100%); /* IE10+ */
-
-  // For modern browsers
-  background: linear-gradient(to bottom,  @start 0%,@stop 100%); /* W3C */
-
-  // IE6 to IE 8
-  filter: ~"progid:DXImageTransform.Microsoft.gradient(startColorstr='@{start}', endColorstr='@{stop}',GradientType=0 )";
-}
-
 .linear-gradient(@start: #fff, @stop: #eee) {
   @argb_start: argb(@start);
   @argb_stop: argb(@stop);
@@ -37,22 +14,25 @@
   background: ~`(+'@{opacity}' < 2)?'transparent':'@{rgb}'`;
 
   // Firefox 3.6+
-  background: -moz-linear-gradient(top,  @start 0%, @stop 100%);
+  background: -moz-linear-gradient(top, @start 0%, @stop 100%);
+
+  // Opera
+  background: -o-linear-gradient(top, @start 0%, @stop 100%);
 
   // Chrome & Safari 4+
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@start), color-stop(100%,@stop)); /* Chrome,Safari4+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, @start), color-stop(100%, @stop)); /* Chrome,Safari4+ */
 
   // Chrome 10 + & Safari 5.1+
-  background: -webkit-linear-gradient(top,  @start 0%,@stop 100%);
+  background: -webkit-linear-gradient(top, @start 0%, @stop 100%);
 
   // IE 10+
-  background: -ms-linear-gradient(top,  @start 0%,@stop 100%); /* IE10+ */
+  background: -ms-linear-gradient(top, @start 0%, @stop 100%); /* IE10+ */
 
   // For modern browsers
-  background: linear-gradient(to bottom,  @start 0%,@stop 100%); /* W3C */
+  background: linear-gradient(to bottom, @start 0%, @stop 100%); /* W3C */
 
   // IE6 to IE 8
-  filter: ~"progid:DXImageTransform.Microsoft.gradient(startColorstr='@{argb_start}', endColorstr='@{argb_stop}',GradientType=0 )";
+  filter: ~"progid:DXImageTransform.Microsoft.gradient(startColorstr='@{argb_start}', endColorstr='@{argb_stop}', GradientType=0)";
 }
 
 
@@ -63,9 +43,10 @@
   @argb: argb(@color);
 
   background: transparent;
+
   .rgba & {
     background: @color;
   }
 
-  filter: ~"progid:DXImageTransform.Microsoft.gradient(startColorstr='@{argb}', endColorstr='@{argb}',GradientType=0 )"; /* IE6-9 */
+  filter: ~"progid:DXImageTransform.Microsoft.gradient(startColorstr='@{argb}', endColorstr='@{argb}', GradientType=0)"; /* IE6-9 */
 }

@@ -22,22 +22,19 @@
 }
 
 .linear-gradient(@start: #fff, @stop: #eee) {
+  @argb_start: argb(@start);
+  @argb_stop: argb(@stop);
+
   @red: red(@start);
   @green: green(@start);
   @blue: blue(@start);
 
-  // Browsers that do not support gradients (I know right?!)
-  background: rgb(@red,@green,@blue);
-}
+  @rgb: rgb(@red,@green,@blue);
+  @opacity: alpha(@start) + alpha(@stop);
 
-.linear-gradient(@start: #fff, @stop: #eee) when (alpha(@start) < 1), (alpha(@stop) < 1) {
-  background: transparent;
-}
 
-.linear-gradient(@start: #fff, @stop: #eee) {
-  @argb_start: argb(@start);
-  @argb_stop: argb(@stop);
-
+  // Transparent for IE8 and below, otherwise use rgb fallback
+  background: ~`(+'@{opacity}' < 2)?'transparent':'@{rgb}'`;
 
   // Firefox 3.6+
   background: -moz-linear-gradient(top,  @start 0%, @stop 100%);

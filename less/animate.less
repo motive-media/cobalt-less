@@ -16,6 +16,14 @@
     transform: @arguments;
 }
 
+// Animation
+.animation(@arguments) {
+    -webkit-animation: @arguments;
+    -moz-animation: @arguments;
+    -o-animation: @arguments;
+    animation: @arguments;
+}
+
 // Rotate
 .rotate(@deg: 5deg){
     .transform(rotate(@deg));

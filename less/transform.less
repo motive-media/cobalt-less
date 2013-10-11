@@ -1,0 +1,24 @@
+.transform(@arguments) {
+    -webkit-transform: @arguments;
+    -moz-transform: @arguments;
+    -o-transform: @arguments;
+    -ms-transform: @arguments;
+    transform: @arguments;
+}
+
+
+// No longer supported, will remove after version 1
+// Rotate
+.rotate(@deg: 5deg){
+    .transform(rotate(@deg));
+}
+
+// Scale
+.scale(@ratio: 1.5){
+    .transform(scale(@ratio));
+}
+
+// Translate
+.translate(@x:0, @y:0) {
+    .transform(translate(@x, @y));
+}

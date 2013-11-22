@@ -1,0 +1,17 @@
+.retina-image(@file, @type, @repeat, @width, @height, @posx, @posy) {
+    background-image: url('@{file}.@{type}');
+    background-repeat: @repeat;
+    background-position: @posx @posy;
+
+    @media
+    only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (min--moz-device-pixel-ratio: 2),
+    only screen and (-o-min-device-pixel-ratio: 2/1),
+    only screen and (min-device-pixel-ratio: 2),
+    only screen and (min-resolution: 192dpi),
+    only screen and (min-resolution: 2dppx) {
+        background-size: @width @height;
+        background-image: url('@{file}_x2.@{type}');
+        background-position: @posx * 2 @posy * 2;
+    }
+}

@@ -1,38 +1,75 @@
 .linear-gradient(@start: #fff, @stop: #eee) {
-  @argb_start: argb(@start);
-  @argb_stop: argb(@stop);
+	@argb_start: argb(@start);
+	@argb_stop: argb(@stop);
 
-  @red: red(@start);
-  @green: green(@start);
-  @blue: blue(@start);
+	@red: red(@start);
+	@green: green(@start);
+	@blue: blue(@start);
 
-  @rgb: rgb(@red,@green,@blue);
-  @opacity: alpha(@start) + alpha(@stop);
+	@rgb: rgb(@red,@green,@blue);
+	@opacity: alpha(@start) + alpha(@stop);
 
 
-  // Transparent for IE8 and below, otherwise use rgb fallback
-  background: ~`(+'@{opacity}' < 2)?'transparent':'@{rgb}'`;
+	// Transparent for IE8 and below, otherwise use rgb fallback
+	background: ~`(+'@{opacity}' < 2)?'transparent':'@{rgb}'`;
 
-  // Firefox 3.6+
-  background: -moz-linear-gradient(top, @start 0%, @stop 100%);
+	// Firefox 3.6+
+	background: -moz-linear-gradient(top, @start 0%, @stop 100%);
 
-  // Opera
-  background: -o-linear-gradient(top, @start 0%, @stop 100%);
+	// Opera
+	background: -o-linear-gradient(top, @start 0%, @stop 100%);
 
-  // Chrome & Safari 4+
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, @start), color-stop(100%, @stop)); /* Chrome,Safari4+ */
+	// Chrome & Safari 4+
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, @start), color-stop(100%, @stop));
 
-  // Chrome 10 + & Safari 5.1+
-  background: -webkit-linear-gradient(top, @start 0%, @stop 100%);
+	// Chrome 10 + & Safari 5.1+
+	background: -webkit-linear-gradient(top, @start 0%, @stop 100%);
 
-  // IE 10+
-  background: -ms-linear-gradient(top, @start 0%, @stop 100%); /* IE10+ */
+	// IE 10+
+	background: -ms-linear-gradient(top, @start 0%, @stop 100%); /* IE10+ */
 
-  // For modern browsers
-  background: linear-gradient(to bottom, @start 0%, @stop 100%); /* W3C */
+	// For modern browsers
+	background: linear-gradient(to bottom, @start 0%, @stop 100%); /* W3C */
 
-  // IE6 to IE 8
-  filter: ~"progid:DXImageTransform.Microsoft.gradient(startColorstr='@{argb_start}', endColorstr='@{argb_stop}', GradientType=0)";
+	// IE6 to IE 8
+	filter: ~"progid:DXImageTransform.Microsoft.gradient(startColorstr='@{argb_start}', endColorstr='@{argb_stop}', GradientType=0)";
+}
+
+.linear-gradient-top-left(@start: #fff, @stop: #eee) {
+	@argb_start: argb(@start);
+	@argb_stop: argb(@stop);
+
+	@red: red(@start);
+	@green: green(@start);
+	@blue: blue(@start);
+
+	@rgb: rgb(@red,@green,@blue);
+	@opacity: alpha(@start) + alpha(@stop);
+
+
+	// Transparent for IE8 and below, otherwise use rgb fallback
+	background: ~`(+'@{opacity}' < 2)?'transparent':'@{rgb}'`;
+
+	// Firefox 3.6+
+	background: -moz-linear-gradient(-45deg, @start 0%, @stop 100%); /* FF3.6+ */
+
+	// Chrome & Safari 4+
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, @start), color-stop(100%, @stop)); /* Chrome,Safari4+ */
+
+	// Chrome 10 + & Safari 5.1+
+	background: -webkit-linear-gradient(-45deg, @start 0%, @stop 100%); /* Chrome10+,Safari5.1+ */
+
+	// Opera
+	background: -o-linear-gradient(-45deg, @start 0%, @stop 100%); /* Opera 11.10+ */
+
+	// IE 10+
+	background: -ms-linear-gradient(-45deg, @start 0%, @stop 100%); /* IE10+ */
+
+	// For modern browsers
+	background: linear-gradient(135deg, @start 0%, @stop 100%); /* W3C */
+
+	// IE6 to IE 8
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#@{argb_start}', endColorstr='@{argb_stop}',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
 
@@ -40,19 +77,19 @@
 
 // Alpha transparent background for IE without images
 .transparent-background-color(@color) {
-  @argb: argb(@color);
+	@argb: argb(@color);
 
-  background: transparent;
+	background: transparent;
 
-  .rgba & {
-    background: @color;
-  }
+	.rgba & {
+	background: @color;
+	}
 
-  filter: ~"progid:DXImageTransform.Microsoft.gradient(startColorstr='@{argb}', endColorstr='@{argb}', GradientType=0)"; /* IE6-9 */
+	filter: ~"progid:DXImageTransform.Microsoft.gradient(startColorstr='@{argb}', endColorstr='@{argb}', GradientType=0)"; /* IE6-9 */
 
-  // Fix IE9 issues with filter
-  // Relies on html tag ie format
-  .ie9 & {
-    filter: none;
-  }
+	// Fix IE9 issues with filter
+	// Relies on html tag ie format
+	.ie9 & {
+		filter: none;
+	}
 }

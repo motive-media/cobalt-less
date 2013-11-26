@@ -12,22 +12,6 @@
     margin: 0 auto;
 
     article {
-        .transition(~'background-color 0.5s ease, border-width 0.5s ease-in-out');
-        border: 1px solid @border;
-        background-color: @bg;
-
-        &:hover {
-            .inner-shadow(2px 2px 2px rgba(0, 0, 0, 0.2));
-            border: 10px solid @border_hover;
-            background-color: @bg_hover;
-        }
-
-        .content {
-            .linear-gradient(#ddd,fade(#fff,20%));
-            .opacity;
-            .rotate;
-            .scale;
-            .box-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
-        }
+        .linear-gradient-top-left(#ddd,fade(#fff, 20%));
     }
 }

@@ -25,7 +25,5 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='##ffdddddd', endColorstr='#33ffffff', GradientType=1);
   /* IE6-9 fallback on horizontal gradient */
 
-  -webkit-border-top-left-radius: 4px;
-  -moz-border-radius-topleft: 4px;
   border-top-left-radius: 4px;
 }
